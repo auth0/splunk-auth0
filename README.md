@@ -8,4 +8,6 @@
 5. Restart Splunk: `$SPLUNK_HOME/bin/splunk restart`
 
 ### Usage
-[TODO]
+
+1. Go to `Settings -> Data -> Data inputs`
+2. Add new data input for Auth0 app specifying `name`, `domain`, `client ID`, `client secret` and `interval` _(under More settings section)_
