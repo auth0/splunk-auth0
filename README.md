@@ -4,7 +4,7 @@
 * Copy this whole `splunk-auth0` folder to `$SPLUNK_HOME/etc/apps`
 * Open a terminal at `$SPLUNK_HOME/etc/apps/splunk-auth0/bin/app`
 * Run `npm install`
-* Restart Splunk: `$SPLUNK_HOME/splunk restart`
+* Restart Splunk: `$SPLUNK_HOME/bin/splunk restart`
 
 ### Usage
 [TODO]
