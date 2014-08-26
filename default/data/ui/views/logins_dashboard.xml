@@ -1,0 +1,59 @@
+<dashboard>
+  <label>Logins dashboard</label>
+  <!-- First row of a single comment -->
+  <row>
+    <!-- Static content, remove upon editing-->
+    <html>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec diam rhoncus eros mattis vestibulum ut et lorem. Nam a sapien ac mi tincidunt consequat quis eu nulla. In hac habitasse platea dictumst. Duis luctus tempor leo, accumsan scelerisque libero varius porttitor. Cras rutrum hendrerit tortor sed aliquam. Integer porta mauris id aliquet vestibulum. Vestibulum sollicitudin turpis eget eleifend aliquet.
+      </p>
+    </html>
+    <!-- End of static content -->
+  </row>
+  <row>
+    <panel>
+      <chart>
+        <title>Most frequent users</title>
+        <searchString>sourcetype=auth0 | top limit=10 user_name</searchString>
+        <earliestTime>0</earliestTime>
+        <latestTime/>
+        <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
+        <option name="charting.axisLabelsX.majorLabelStyle.rotation">0</option>
+        <option name="charting.axisTitleX.visibility">visible</option>
+        <option name="charting.axisTitleY.visibility">visible</option>
+        <option name="charting.axisTitleY2.visibility">visible</option>
+        <option name="charting.axisX.scale">linear</option>
+        <option name="charting.axisY.scale">linear</option>
+        <option name="charting.axisY2.enabled">false</option>
+        <option name="charting.axisY2.scale">inherit</option>
+        <option name="charting.chart">pie</option>
+        <option name="charting.chart.nullValueMode">gaps</option>
+        <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
+        <option name="charting.chart.stackMode">default</option>
+        <option name="charting.chart.style">shiny</option>
+        <option name="charting.drilldown">all</option>
+        <option name="charting.layout.splitSeries">0</option>
+        <option name="charting.legend.labelStyle.overflowMode">ellipsisMiddle</option>
+        <option name="charting.legend.placement">right</option>
+      </chart>
+    </panel>
+    
+    <panel>
+      <map>
+        <title>Login Locations</title>
+        <searchString>sourcetype=auth0 type=s | iplocation ip | geostats latfield=lat longfield=lon count by user_name</searchString>
+        <earliestTime>0</earliestTime>
+        <latestTime/>
+        <option name="mapping.data.maxClusters">100</option>
+        <option name="mapping.drilldown">all</option>
+        <option name="mapping.map.center">(0,0)</option>
+        <option name="mapping.map.zoom">2</option>
+        <option name="mapping.markerLayer.markerMaxSize">50</option>
+        <option name="mapping.markerLayer.markerMinSize">10</option>
+        <option name="mapping.markerLayer.markerOpacity">0.8</option>
+        <option name="mapping.tileLayer.maxZoom">7</option>
+        <option name="mapping.tileLayer.minZoom">0</option>
+      </map>
+    </panel>
+  </row>
+</dashboard>

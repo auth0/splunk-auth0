@@ -7,5 +7,5 @@
     "splunk-sdk": ">=1.4.0",
     "auth0": ">=0.6.2"
   },
-  "author": "Splunk"
+  "author": "Auth0"
 }
