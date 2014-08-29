@@ -55,9 +55,8 @@
   exports.streamEvents = function (name, singleInput, eventWriter, done) {
     // Get the checkpoint directory out of the modular input's metadata
     var checkpointDir = this._inputDefinition.metadata['checkpoint_dir'];
-    var checkpointFilePath  = path.join(checkpointDir, singleInput.clientId + '-log-checkpoint.txt');
+    var checkpointFilePath  = path.join(checkpointDir, singleInput.domain + '-log-checkpoint.txt');
 
-    // Set the temporary contents of the checkpoint file to an empty string
     var logCheckpoint = '';
     try {
       logCheckpoint = utils.readFile('', checkpointFilePath);
