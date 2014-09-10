@@ -1,5 +1,5 @@
 <form>
-  <label>Logins dashboard</label>
+  <label>General Activity</label>
   <fieldset submitButton="false" autoRun="true">
     <input type="dropdown" token="auth0_tenant" searchWhenChanged="true">
       <label>Data Input</label>
