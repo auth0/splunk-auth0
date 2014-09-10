@@ -14,7 +14,7 @@
 
 ### Troubleshooting
 
-* File location for latest log checkpoint: `$SPLUNK_HOME/var/lib/splunk/modinputs/`
+* File location for latest log checkpoint: `$SPLUNK_HOME/var/lib/splunk/modinputs/{AUTH0_DOMAIN}-log-checkpoint.txt`
 * Log files:
 	* `$SPLUNK_HOME/var/log/splunk/audit.log`
 	* `$SPLUNK_HOME/var/log/splunk/splunkd.log`
