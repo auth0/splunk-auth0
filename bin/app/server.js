@@ -48,8 +48,14 @@
   };
 
   exports.validateInput = function (definition, done) {
-    // TODO: validate definition.parameters.domain, definition.parameters.cliendId, definition.parameters.clientSecret
-    done();
+    // validate Auth0 keys
+    var auth0 = new Auth0({
+      domain:       definition.parameters.domain,
+      clientID:     definition.parameters.clientId,
+      clientSecret: definition.parameters.clientSecret
+    });
+
+    auth0.getAccessToken(done);
   };
 
   exports.streamEvents = function (name, singleInput, eventWriter, done) {
