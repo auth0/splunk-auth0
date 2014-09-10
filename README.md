@@ -21,10 +21,11 @@
 
 ### Erase data
 
-1. Perform the following search:
-* Remove all Auth0 events `sourcetype="auth0_logs" | delete`
-* Remove specific data input events: `source=auth0://{DATA_INPUT_NAME} | delete`
+1. Delete data input from `Settings -> Data -> Data inputs`
 2. Delete log checkpoint file: `$SPLUNK_HOME/var/lib/splunk/modinputs/{AUTH0_DOMAIN}-log-checkpoint.txt`
+3. Perform the following search:
+	* Remove all Auth0 events `sourcetype="auth0_logs" | delete`
+	* Remove specific data input events: `source=auth0://{DATA_INPUT_NAME} | delete`
 
 ### TODO
 
