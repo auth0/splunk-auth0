@@ -48,8 +48,16 @@
   };
 
   exports.validateInput = function (definition, done) {
-    // TODO: validate definition.parameters.domain, definition.parameters.cliendId, definition.parameters.clientSecret
-    done();
+    var auth0 = new Auth0({
+      domain:       definition.parameters.domain,
+      clientID:     definition.parameters.clientId,
+      clientSecret: definition.parameters.clientSecret
+    });
+
+    auth0.getAccessToken(function (err) {
+      clearTimeout(auth0._accessTokenTimer);
+      done(err);
+    });
   };
 
   exports.streamEvents = function (name, singleInput, eventWriter, done) {

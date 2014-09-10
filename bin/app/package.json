@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "splunk-sdk": ">=1.4.0",
-    "auth0": ">=0.6.2"
+    "auth0": ">=0.6.4"
   },
   "author": "Auth0"
 }
