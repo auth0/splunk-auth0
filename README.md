@@ -34,4 +34,3 @@
 - [x] Default dashboard: support multi-tenancy (include a drop-down list to choose the tenant)
 - [ ] Dashboards page: show default dashboard instead of dashboards grid
 - [ ] Default dashboard: include more charts
-- 
