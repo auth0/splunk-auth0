@@ -112,11 +112,10 @@
               try {
                 var event = new Event({
                   stanza:     singleInput.domain,
-                  sourcetype: 'auth0',
+                  sourcetype: 'auth0_logs',
                   data:       JSON.stringify(logs[i]), // Have Splunk index our event data as JSON
-                  time:       Date.parse(logs[i].date) // Set the event timestamp to the time of the log
                 });
-
+                
                 eventWriter.writeEvent(event);
                 logCheckpoint = logs[i]._id;
 

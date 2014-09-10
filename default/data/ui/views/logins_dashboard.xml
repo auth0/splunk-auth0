@@ -1,20 +1,18 @@
-<dashboard>
+<form>
   <label>Logins dashboard</label>
-  <!-- First row of a single comment -->
-  <row>
-    <!-- Static content, remove upon editing-->
-    <html>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam nec diam rhoncus eros mattis vestibulum ut et lorem. Nam a sapien ac mi tincidunt consequat quis eu nulla. In hac habitasse platea dictumst. Duis luctus tempor leo, accumsan scelerisque libero varius porttitor. Cras rutrum hendrerit tortor sed aliquam. Integer porta mauris id aliquet vestibulum. Vestibulum sollicitudin turpis eget eleifend aliquet.
-      </p>
-    </html>
-    <!-- End of static content -->
-  </row>
+  <fieldset submitButton="false" autoRun="true">
+    <input type="dropdown" token="auth0_tenant" searchWhenChanged="true">
+      <label>Data Input</label>
+      <selectFirstChoice>true</selectFirstChoice>
+      <populatingSearch earliest="$earliest$" latest="$latest$" fieldForLabel="source" fieldForValue="source">| metadata type=sources | search totalCount &gt; 0 | table source</populatingSearch>
+      <default>auth0://contoso</default>
+    </input>
+  </fieldset>
   <row>
     <panel>
       <chart>
         <title>Most frequent users</title>
-        <searchString>sourcetype=auth0 | top limit=10 user_name</searchString>
+        <searchString>source=$auth0_tenant$ | top limit=10 user_name</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -40,7 +38,7 @@
     <panel>
       <chart>
         <title>Most frequent connections</title>
-        <searchString>sourcetype=auth0 connection!=null | top limit=10 connection</searchString>
+        <searchString>source=$auth0_tenant$ connection!=null | top limit=10 connection</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -50,7 +48,7 @@
         <option name="charting.axisTitleY2.visibility">visible</option>
         <option name="charting.axisX.scale">linear</option>
         <option name="charting.axisY.scale">linear</option>
-        <option name="charting.axisY2.enabled">0</option>
+        <option name="charting.axisY2.enabled">false</option>
         <option name="charting.axisY2.scale">inherit</option>
         <option name="charting.chart">pie</option>
         <option name="charting.chart.nullValueMode">gaps</option>
@@ -68,7 +66,7 @@
     <panel>
       <map>
         <title>Login Locations</title>
-        <searchString>sourcetype=auth0 type=s | iplocation ip | geostats latfield=lat longfield=lon count by user_name</searchString>
+        <searchString>source=$auth0_tenant$ type=s | iplocation ip | geostats latfield=lat longfield=lon count by user_name</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="mapping.data.maxClusters">100</option>
@@ -80,7 +78,8 @@
         <option name="mapping.markerLayer.markerOpacity">0.8</option>
         <option name="mapping.tileLayer.maxZoom">7</option>
         <option name="mapping.tileLayer.minZoom">0</option>
+        <option name="drilldown">all</option>
       </map>
     </panel>
   </row>
-</dashboard>
+</form>
