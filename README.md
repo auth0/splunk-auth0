@@ -31,6 +31,7 @@
 
 - [x] Check for Logger.info() output
 - [x] Data input: validate Auth0 keys (domain, clientID, clientSecret)
-- [ ] Default dashboard: include more charts
-- [ ] Default dashboard: support multi-tenancy (include a drop-down list to choose the tenant)
+- [x] Default dashboard: support multi-tenancy (include a drop-down list to choose the tenant)
 - [ ] Dashboards page: show default dashboard instead of dashboards grid
+- [ ] Default dashboard: include more charts
+- 
