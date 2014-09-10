@@ -19,6 +19,13 @@
 	* `$SPLUNK_HOME/var/log/splunk/audit.log`
 	* `$SPLUNK_HOME/var/log/splunk/splunkd.log`
 
+### Erase data
+
+1. Perform the following search:
+* Remove all Auth0 events `sourcetype="auth0_logs" | delete`
+* Remove specific data input events: `source=auth0://{DATA_INPUT_NAME} | delete`
+2. Delete log checkpoint file: `$SPLUNK_HOME/var/lib/splunk/modinputs/{AUTH0_DOMAIN}-log-checkpoint.txt`
+
 ### TODO
 
 - [x] Check for Logger.info() output
