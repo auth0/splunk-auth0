@@ -27,6 +27,8 @@
 	* Remove all Auth0 events: `sourcetype="auth0_logs" | delete`
 	* Remove specific data input events: `source=auth0://{DATA_INPUT_NAME} | delete`
 
+> If you have insufficient privileges to delete events (and presuming you are admin), go to `Settings -> Users and authentication -> Access controls -> Roles -> admin` and add the `delete_by_keyword` capability under `Capabilities` section.
+
 ### TODO
 
 - [x] Check for Logger.info() output
