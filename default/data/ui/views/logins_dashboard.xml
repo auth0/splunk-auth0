@@ -37,8 +37,8 @@
     </panel>
     <panel>
       <chart>
-        <title>Most frequent connections</title>
-        <searchString>source=$auth0_tenant$ connection!=null | top limit=10 connection</searchString>
+        <title>Successful logins by connections</title>
+        <searchString>source=$auth0_tenant$ type=s | timechart count by connection</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -48,9 +48,9 @@
         <option name="charting.axisTitleY2.visibility">visible</option>
         <option name="charting.axisX.scale">linear</option>
         <option name="charting.axisY.scale">linear</option>
-        <option name="charting.axisY2.enabled">false</option>
+        <option name="charting.axisY2.enabled">0</option>
         <option name="charting.axisY2.scale">inherit</option>
-        <option name="charting.chart">pie</option>
+        <option name="charting.chart">area</option>
         <option name="charting.chart.nullValueMode">gaps</option>
         <option name="charting.chart.sliceCollapsingThreshold">0.01</option>
         <option name="charting.chart.stackMode">default</option>
