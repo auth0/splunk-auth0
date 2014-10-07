@@ -11,7 +11,7 @@
     <panel>
       <chart>
         <title>Successful signups by connection</title>
-        <searchString>source=$auth0_tenant$ type=s details.stats.loginsCount=1 | timechart count by connection</searchString>
+        <searchString>source="$auth0_tenant$" type=s details.stats.loginsCount=1 | timechart count by connection</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -37,7 +37,7 @@
     <panel>
       <chart>
         <title>Successful logins by connection</title>
-        <searchString>source=$auth0_tenant$ type=s | timechart count by connection</searchString>
+        <searchString>source="$auth0_tenant$" type=s | timechart count by connection</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -65,7 +65,7 @@
     <panel>
       <chart>
         <title>Most frequent users</title>
-        <searchString>source=$auth0_tenant$ | top limit=10 user_name</searchString>
+        <searchString>source="$auth0_tenant$" | top limit=10 user_name</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -91,7 +91,7 @@
     <panel>
       <chart>
         <title>Most frequent connections</title>
-        <searchString>source=$auth0_tenant$ type=s | top strategy_type</searchString>
+        <searchString>source="$auth0_tenant$" type=s | top strategy_type</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="charting.axisLabelsX.majorLabelStyle.overflowMode">ellipsisNone</option>
@@ -119,7 +119,7 @@
     <panel>
       <map>
         <title>Logins Locations</title>
-        <searchString>source=$auth0_tenant$ type=s | iplocation ip | geostats latfield=lat longfield=lon count by user_name</searchString>
+        <searchString>source="$auth0_tenant$" type=s | iplocation ip | geostats latfield=lat longfield=lon count by user_name</searchString>
         <earliestTime>0</earliestTime>
         <latestTime/>
         <option name="mapping.data.maxClusters">100</option>
