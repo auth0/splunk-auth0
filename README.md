@@ -10,7 +10,9 @@
 ### Usage
 
 1. Open the Splunk web interface and go to `Settings -> Data -> Data inputs`
-2. Add new data input for Auth0 app specifying `name`, `domain`, `client ID`, `client secret` and `interval` _(under "More settings" section)_
+2. Add new data input for Auth0 app specifying `name`, `domain`, `global client ID`, `global client secret` and `interval` _(under "More settings" section)_
+
+> Global client ID and secret can be found from https://docs.auth0.com/api
 
 ### Troubleshooting
 
