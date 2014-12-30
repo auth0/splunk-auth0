@@ -1,11 +1,8 @@
 ### Setup
 
-1. Set the `SPLUNK_HOME` environment variable to the root directory of your Splunk instance
-2. Copy this whole `splunk-auth0` folder to `$SPLUNK_HOME/etc/apps`
-3. Open a terminal at `$SPLUNK_HOME/etc/apps/splunk-auth0/bin/app`
-4. Ensure execute permissions for startup script: `chmod u+x ../auth0.sh`
-4. Run `npm install`
-5. Restart Splunk: `$SPLUNK_HOME/bin/splunk restart`
+Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
+* You must use a platform that supports Nodejs (which ships in the box for Splunk).
+* Make sure the `SPLUNK_HOME` environment variable is pointing to the root directory of your Splunk instance.
 
 ### Usage
 
@@ -30,6 +27,30 @@
 	* Remove specific data input events: `source=auth0://{DATA_INPUT_NAME} | delete`
 
 > If you have insufficient privileges to delete events (and presuming you are admin), go to `Settings -> Users and authentication -> Access controls -> Roles -> admin` and add the `delete_by_keyword` capability under `Capabilities` section.
+
+### Generate and publish new package
+
+1. Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
+2. Make sure to update version number from `default/app.conf` file.
+3. Push your changes to GitHub and execute the following commands:
+
+```
+# remove any extra file from new package and include npm modules
+git reset --hard
+cd bin/app/
+npm install
+
+# generate spl
+cd ../../..
+alias tar='gnutar'
+tar cv splunk-auth0/ > splunk-auth0.tar
+gzip splunk-auth0.tar
+mv splunk-auth0.tar.gz splunk-auth0.spl
+```
+
+> You are ready to upload the new `splunk-auth0.spl` package to https://apps.splunk.com/app/1884/edit/#/hosting/new
+
+[Splunk Documentation - Package your app or add-on](http://docs.splunk.com/Documentation/Splunk/6.2.1/AdvancedDev/PackageApp)
 
 ### TODO
 
