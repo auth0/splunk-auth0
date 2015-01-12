@@ -3,7 +3,7 @@
 Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
 * You must use a platform that supports Nodejs (which ships in the box for Splunk).
 * Make sure the `SPLUNK_HOME` environment variable is pointing to the root directory of your Splunk instance.
-* If your Splunk Web is located behind a proxy server, please configure the (HTTP_PROXY / HTTPS_PROXY environment variable)[http://docs.splunk.com/Documentation/Splunk/latest/Admin/Specifyaproxyserver].
+* If your Splunk Web is located behind a proxy server, please configure the [HTTP_PROXY (or HTTPS_PROXY) environment variable](http://docs.splunk.com/Documentation/Splunk/latest/Admin/Specifyaproxyserver).
 
 ### Usage
 
