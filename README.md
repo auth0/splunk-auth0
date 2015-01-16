@@ -14,7 +14,7 @@ Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
 
 ### Troubleshooting
 
-* File location for latest log checkpoint: `$SPLUNK_HOME/var/lib/splunk/modinputs/{AUTH0_DOMAIN}-log-checkpoint.txt`
+* File location for latest log checkpoint: `$SPLUNK_HOME/var/lib/splunk/modinputs/auth0/{AUTH0_DOMAIN}-log-checkpoint.txt`
 * Log files:
 	* `$SPLUNK_HOME/var/log/splunk/audit.log`
 	* `$SPLUNK_HOME/var/log/splunk/splunkd.log`
@@ -32,19 +32,22 @@ Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
 ### Generate and publish new package
 
 1. Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
-2. Make sure to update version number from `default/app.conf` file.
-3. Push your changes to GitHub and execute the following commands:
+2. Run `npm install -g flatten-packages`
+3. Make sure to update version number from `default/app.conf` file.
+4. Push your changes to GitHub and execute the following commands:
 
 ```
 # remove any extra file from new package and include npm modules
 git reset --hard
 cd bin/app/
+rm -rf ./node_modules
 npm install
+flatten-packages
 
 # generate spl
 cd ../../..
 alias tar='gnutar'
-tar cv splunk-auth0/ > splunk-auth0.tar
+tar cv splunk-auth0/ --exclude .git --exclude .DS_Store --exclude "*.log" > splunk-auth0.tar
 gzip splunk-auth0.tar
 mv splunk-auth0.tar.gz splunk-auth0.spl
 ```
