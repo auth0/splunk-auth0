@@ -53,14 +53,6 @@ mv splunk-auth0.tar.gz splunk-auth0.spl
 
 [Splunk Documentation - Package your app or add-on](http://docs.splunk.com/Documentation/Splunk/6.2.1/AdvancedDev/PackageApp)
 
-### TODO
-
-- [x] Check for Logger.info() output
-- [x] Data input: validate Auth0 keys (domain, clientID, clientSecret)
-- [x] Default dashboard: support multi-tenancy (include a drop-down list to choose the tenant)
-- [x] Dashboards page: show default dashboard instead of dashboards grid
-- [ ] Default dashboard: include more charts
-
 ## Issue Reporting
 
 If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/whitehat) details the procedure for disclosing security issues.
