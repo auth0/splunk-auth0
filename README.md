@@ -31,9 +31,9 @@ Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
 
 ### Generate and publish new package
 
-1. Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
-2. Make sure to update version number from `default/app.conf` file.
-3. Push your changes to GitHub and execute the following commands:
+1) Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
+2) Make sure to update version number from `default/app.conf` file.
+3) Push your changes to GitHub and execute the following commands:
 
 ```
 # include dependencies
@@ -48,7 +48,7 @@ gzip splunk-auth0.tar
 mv splunk-auth0.tar.gz splunk-auth0.spl
 ```
 
-4. You are ready to upload the new `splunk-auth0.spl` package to https://apps.splunk.com/app/1884/edit/#/hosting/new
+4) You are ready to upload the new `splunk-auth0.spl` package to https://apps.splunk.com/app/1884/edit/#/hosting/new
 
 > More info see [Splunk Documentation - Package your app or add-on](http://docs.splunk.com/Documentation/Splunk/6.2.1/AdvancedDev/PackageApp)
 
