@@ -50,7 +50,7 @@ mv splunk-auth0.tar.gz splunk-auth0.spl
 
 > You are ready to upload the new `splunk-auth0.spl` package to https://apps.splunk.com/app/1884/edit/#/hosting/new
 
-[Splunk Documentation - Package your app or add-on](http://docs.splunk.com/Documentation/Splunk/6.2.1/AdvancedDev/PackageApp)
+> More info see [Splunk Documentation - Package your app or add-on](http://docs.splunk.com/Documentation/Splunk/6.2.1/AdvancedDev/PackageApp)
 
 ## Issue Reporting
 
