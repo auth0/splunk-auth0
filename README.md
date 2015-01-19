@@ -33,16 +33,15 @@ Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
 
 1. Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
 2. Make sure to update version number from `default/app.conf` file.
-3. Push your changes to GitHub and execute the following commands:
+3. Execute the following:
 
 ```
 # include dependencies
-cd bin/app/
-rm -rf ./node_modules && npm install --production
+cd bin/app/ && rm -rf ./node_modules && npm install --production
 
 # generate spl package
-cd ../../..
 alias tar='gnutar'
+cd ../../..
 tar cv splunk-auth0/ -X splunk-auth0/.tarignore > splunk-auth0.tar
 gzip splunk-auth0.tar
 mv splunk-auth0.tar.gz splunk-auth0.spl
