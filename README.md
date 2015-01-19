@@ -31,13 +31,15 @@ Just install the package from [Splunk Apps](https://apps.splunk.com/app/1884).
 
 ### Generate and publish new package
 
-1. Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
-2. Make sure to update version number from `default/app.conf` file.
-3. Execute the following:
+1. Make sure to update version number from `default/app.conf` file.
+2. Install `gnutar` | [instructions](http://day-to-day-stuff.blogspot.com.ar/2013/11/installing-gnutar-on-maverick.html)
+3. `npm install -g flatten-packages`
+4. Execute the following:
 
 ```
 # include dependencies
 cd bin/app/ && rm -rf ./node_modules && npm install --production
+flatten-packages
 
 # generate spl package
 alias tar='gnutar'
